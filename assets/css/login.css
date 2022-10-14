@@ -32,3 +32,32 @@ body {
 .reg-box {
     display: none;
 }
+
+.layui-form {
+    padding: 0 30px;
+}
+
+/* 使用flex布局，将其位居右侧 */
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links a {
+    font-size: 12px;
+}
+
+/* 将图标定位--子绝父相 */
+.layui-form-item {
+    position: relative;
+}
+
+.layui-form-item .layui-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.layui-input {
+    padding-left: 32px;
+}

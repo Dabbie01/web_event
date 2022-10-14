@@ -2,7 +2,7 @@
  * @Author: Dabbie 2310734576@qq.com
  * @Date: 2022-10-14 11:17:27
  * @LastEditors: Dabbie 2310734576@qq.com
- * @LastEditTime: 2022-10-14 12:26:11
+ * @LastEditTime: 2022-10-14 16:50:56
  * @FilePath: \event_creating\login.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -24,19 +24,75 @@
         <img src="./assets/images/logo.png" alt="">
     </div>
 
+
     <!-- 登录注册面板 -->
     <div class="loginAndRegBox">
+        <!-- 面板头部标题 -->
         <div class="title-box"></div>
+
         <!-- 登录box -->
         <div class="login-box">
-            <a href="javascript:;" id="link_reg">去注册</a>
-        </div>
+            <!-- 使用layui来创建form表单以及表单中的输入框&按钮 -->
+            <form class="layui-form" action="">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <!-- 小图标 -->
+                    <i class="layui-icon layui-icon-username"></i>   
+                    <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <!-- 小图标 -->
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required  lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 登录提交按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid  layui-btn-normal" lay-submit lay-filter="formDemo">提交</button>
+                </div>
+                <!-- 转为注册 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_reg">去注册</a>
+                </div>
+            </form>
+        </div> 
+
         <!-- 注册box -->
         <div class="reg-box">
-            <a href="javascript:;" id="link_login">去登录</a>
+            <form class="layui-form" id="form_reg">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <!-- 小图标 -->
+                    <i class="layui-icon layui-icon-username"></i>   
+                    <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <!-- 小图标 -->
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required  lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 再次确认密码 -->
+                <div class="layui-form-item">
+                    <!-- 小图标 -->
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required  lay-verify="required|pwd|repwd" placeholder="再次确认密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 注册提交按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid  layui-btn-normal" lay-submit lay-filter="formDemo">注册</button>
+                </div>
+                <!-- 转为登录 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_login">去登录</a>
+                </div>
+            </form>
         </div>
     </div>
 
+
+    <!-- 导入layui的js -->
+    <script src="./assets/lib/layui/layui.all.js"></script>
     <!-- 行为，采用js来写，导入jQuery 方便使用dom-->
     <script src="./assets/lib/jquery.js"></script>
     <!-- 导入自己的js -->
