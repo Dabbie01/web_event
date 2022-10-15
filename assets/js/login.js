@@ -2,7 +2,7 @@
  * @Author: Dabbie 2310734576@qq.com
  * @Date: 2022-10-14 12:24:01
  * @LastEditors: Dabbie 2310734576@qq.com
- * @LastEditTime: 2022-10-14 17:51:54
+ * @LastEditTime: 2022-10-15 10:59:13
  * @FilePath: \event_creating\assets\js\login.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -57,6 +57,27 @@ $(function(){
          layer.msg('注册成功，请登录！')
          // 模拟点击行为，跳转到登录界面
          $('#link_login').click()
+      })
+   })
+
+   // 监听登录表单的提交事件
+   $('#form_login').submit(function(e){
+      e.preventDefault()
+      $.ajax({
+         method: 'POST',
+         url: 'http://www.liulongbin.top:3007/api/login',
+         // 快速获取表单信息
+         data: $(this).serialize(),
+         success: function(res){
+            if(res.status !== 0){
+               layer.msg = '登陆失败！'
+            }
+            layer.msg = '登录成功！'
+            // 将登录成功得到的token字符串，保存到localstarage里面
+            localStorage.setItem('token', res.token)
+            // 跳转到后台主页
+            location.href = '/index.html'
+         }
       })
    })
 })
