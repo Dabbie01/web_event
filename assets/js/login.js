@@ -2,7 +2,7 @@
  * @Author: Dabbie 2310734576@qq.com
  * @Date: 2022-10-14 12:24:01
  * @LastEditors: Dabbie 2310734576@qq.com
- * @LastEditTime: 2022-10-15 10:59:13
+ * @LastEditTime: 2022-10-15 15:50:10
  * @FilePath: \event_creating\assets\js\login.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -50,7 +50,7 @@ $(function(){
       e.preventDefault()
       // 通过接口文档可知是post请求
       var data = {username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val()}
-      $.post('http://www.liulongbin.top:3007/api/reguser', data, function(res){
+      $.post('/api/reguser', data, function(res){
          if(res.status !== 0){
             return layer.msg(res.message)
          }
@@ -65,7 +65,7 @@ $(function(){
       e.preventDefault()
       $.ajax({
          method: 'POST',
-         url: 'http://www.liulongbin.top:3007/api/login',
+         url: '/api/login',
          // 快速获取表单信息
          data: $(this).serialize(),
          success: function(res){

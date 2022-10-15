@@ -1,0 +1,56 @@
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+.layui-icon,
+.iconfont {
+    margin-right: 8px;
+}
+
+/* 给iframe设置宽高 */
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 有俩滚动轴，去掉一个 */
+.layui-body {
+    overflow: hidden;
+}
+
+/* 设置宽高，字体大小 */
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    /* 设置字体不可选 */
+    user-select: none;
+}
+
+/* 单独给左侧导航上方的头像区设置底部border */
+.layui-side-scroll .userinfo {
+    border-bottom: 1px solid #282b33;
+}
+
+.layui-nav-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* 设置字母头像css */
+.text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #009688;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+}
